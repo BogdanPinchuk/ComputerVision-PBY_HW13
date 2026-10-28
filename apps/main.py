@@ -24,3 +24,13 @@ def load_image(file_name: str) -> np.ndarray:
     img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
 
     return img_rgb
+
+
+def contrast(val1: np.number, val2: np.number) -> float:
+    """
+    Contrast between 2 values
+    :param val1: first value
+    :param val2: second value
+    :return: result between 0 and 1
+    """
+    return abs(val1 - val2) / abs(val1 + val2) if (val1 + val2) != 0 else 0
